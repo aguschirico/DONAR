@@ -1,0 +1,76 @@
+﻿@model DonAR.UI.Models.IndexModels
+@{
+    ViewBag.Title = "Don-Ar";
+}
+@section featured {
+}
+<div class="sub-header">
+    <div class="container clearfix">
+        <h1 class="fl bold">Detalle de Campañas</h1>
+
+    </div>
+    <div id="info_bar">
+        <div class="container clearfix">
+            <span id="red_cross_content" class="fl">
+                @(string.IsNullOrEmpty(Model.CategoryName) ? "Todas las campañas vigentes" : Model.CategoryName)
+            </span>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container clearfix">
+        <section class="browse-results fr translate">
+            <ul class="badges clearfix">
+                @foreach (var i in Model.Campaigns)
+                {
+                    <li class="fl badge rounded shadow ">
+                        <div class="image clearfix">
+                            <a href="/campaign/index?id=@i.Id">
+                                <img alt="20121111042332-684891879" class="fl rounded rounded-no-bottom" height="194" src="/Content/@i.ImageName" width="220">
+                            </a>
+                        </div>
+                        <div class="project-category translate">
+                            @i.CategoryName
+                        </div>
+                        <div class="project-details">
+                            <a href="/campaign/index?id=@i.Id">
+                                @i.Title
+                            </a>
+                            <p class="description notranslate">
+                                @i.Description
+                            </p>
+                        </div>
+                        <div class="targets clearfix">
+                            <p class="progress complete@(Math.Round(i.Funded * 100)) ir rounded">Starting - 1.27069 Complete</p>
+                            <div class="baseball_stats_wrapper">
+                                <div class="baseball_stats">
+                                    <p class="fl percent-funded"><span class="amount notranslate">@(i.Funded * 100)%</span><br>objetivo</p>
+                                    <p class="fl money-raised"><span class="amount notranslate">@i.StartDate.ToShortDateString()</span><br>desde</p>
+                                    <p class="fl days-left"><span class="amount notranslate">@i.LimitDate.ToShortDateString()</span><br> hasta</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <nav class="pager">
+                <div class="browse_pagination"><span class="previous_page disabled">Ant</span> <em class="current">1</em> <a rel="next" href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=2">2</a> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=3">3</a> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=4">4</a> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=5">5</a> <span class="gap">…</span> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=8">8</a> <a class="next_page" rel="next" href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=2">Sig</a></div>
+            </nav>
+        </section>
+        <aside class="fl category-menu">
+            <nav>
+                <div class="advanced-search">
+                    <a class="toggle rounded" href="/">Todas las campañas</a>
+                </div>
+                <ul class="main-categories">
+                    @foreach (var i in Model.Categories)
+                    {
+                        <li class="category">
+                            <a href="/home/bycategory?categoryid=@i.Id" class="link bold">@i.Name</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </aside>
+    </div>
+</div>

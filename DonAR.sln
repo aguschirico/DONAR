@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonAR.UI", "DonAR.UI\DonAR.UI.csproj", "{ED6FD870-1903-4277-A920-879FA9BFE8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonAR.UI.Tests", "DonAR.UI.Tests\DonAR.UI.Tests.csproj", "{62EEE19E-93E9-4012-96D4-CDC322CBCF62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonAR.Core", "DonAR.Core\DonAR.Core.csproj", "{2406FABF-D472-435A-83F9-8D1200471689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonAR.Core.Def", "DonAR.Core.Def\DonAR.Core.Def.csproj", "{81685FA0-1208-4E6B-9BE1-E6A985707E0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonAR.Core.Tests", "DonAR.Core.Tests\DonAR.Core.Tests.csproj", "{9A266111-E605-428F-BDC8-D277A2987E22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED6FD870-1903-4277-A920-879FA9BFE8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6FD870-1903-4277-A920-879FA9BFE8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6FD870-1903-4277-A920-879FA9BFE8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6FD870-1903-4277-A920-879FA9BFE8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62EEE19E-93E9-4012-96D4-CDC322CBCF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62EEE19E-93E9-4012-96D4-CDC322CBCF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62EEE19E-93E9-4012-96D4-CDC322CBCF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62EEE19E-93E9-4012-96D4-CDC322CBCF62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2406FABF-D472-435A-83F9-8D1200471689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2406FABF-D472-435A-83F9-8D1200471689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2406FABF-D472-435A-83F9-8D1200471689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2406FABF-D472-435A-83F9-8D1200471689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81685FA0-1208-4E6B-9BE1-E6A985707E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81685FA0-1208-4E6B-9BE1-E6A985707E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81685FA0-1208-4E6B-9BE1-E6A985707E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81685FA0-1208-4E6B-9BE1-E6A985707E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A266111-E605-428F-BDC8-D277A2987E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A266111-E605-428F-BDC8-D277A2987E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A266111-E605-428F-BDC8-D277A2987E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A266111-E605-428F-BDC8-D277A2987E22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
