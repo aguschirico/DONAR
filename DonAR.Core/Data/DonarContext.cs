@@ -119,17 +119,17 @@ namespace DonAR.Core.Data
             context.Users.Add(new User
             {
                 Id = 1,
-                Campaigns = new List<Campaign> { new Campaign { Id = 1 }, new Campaign { Id = 2 } }
+                Campaigns = context.Campaigns.Where(x=>x.Id == 1 || x.Id == 2).ToList()
             });
             context.Users.Add(new User
             {
                 Id = 2,
-                Campaigns = new List<Campaign> { new Campaign { Id = 1 }, new Campaign { Id = 2 } }
+                Campaigns = context.Campaigns.Where(x => x.Id == 1 || x.Id == 2).ToList()
             });
             context.Users.Add(new User
             {
                 Id = 3,
-                Campaigns = new List<Campaign> { new Campaign { Id = 2 }, new Campaign { Id = 3 } }
+                Campaigns = context.Campaigns.Where(x => x.Id == 2 || x.Id == 3).ToList()
             });
 
             #endregion
