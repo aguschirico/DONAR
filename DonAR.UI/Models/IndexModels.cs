@@ -42,12 +42,12 @@ namespace DonAR.UI.Models
                                 ? repoCampaigns.GetAll()
                                       .Where(c => c.Category.Id == categoryId.Value)
                                 : repoCampaigns.GetAll();
+            
             Campaigns = campaigns
                 .Select(i => new CampaignModels
                 {
                     Id = i.Id,
-                    CategoryName =
-                        repo.GetById(i.Category.Id).Name,
+                    CategoryName = i.Category.Name,
                     Description = i.Description,
                     Title = i.Title,
                     LimitDate = i.Target.LimitDate,

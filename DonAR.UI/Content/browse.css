@@ -1,0 +1,112 @@
+aside {
+  width: 210px;
+}
+
+aside .link {
+  color: #666;
+}
+
+aside .link:hover {
+  text-decoration: none;
+  color: #FC6D29;
+}
+
+aside .active {
+  color: #FC6D29;
+}
+
+aside .active:after {
+  content: ' ▶';
+  font-size: 14px;
+}
+
+aside .main-categories {
+  margin-bottom: 30px;
+}
+
+aside .main-categories .category {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 13px;
+}
+
+aside .main-categories .link {
+  display: block;
+  font-size: 17px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #cac8c8;
+}
+
+
+aside .sub-categories {
+  color: #666666;
+  font-family: arial;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+aside .sub-categories .link {
+  letter-spacing: -0.02em;
+}
+
+aside .sub-categories .category-title {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.advanced-search {
+  margin-bottom: 35px;
+}
+
+.advanced-search .toggle {
+  background: #aeaeae;
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 2px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+
+.advanced-search .toggle-opened {
+  border-bottom: 1px solid #fff;
+}
+
+.advanced-search .toggle:after {
+  content: ' +';
+  font-size: 20px;
+}
+
+.advanced-search .toggle-opened:after {
+  content: ' -' !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.advanced-search .toggle:hover {
+  background: #FC6D29;
+}
+
+.advanced-search #form_advanced_search {
+  background: #d2d2d2;
+  padding: 10px;
+}
+
+.advanced-search #form_advanced_search_city {
+  margin-bottom: 5px;
+}
+
+.advanced-search .input-item-submit {
+  text-align: center;
+}
+
+.browse-results {
+  width: 725px;
+}
+
+.browse-results .badge {
+  margin-right: 0;
+  margin-left: 21px;
+}

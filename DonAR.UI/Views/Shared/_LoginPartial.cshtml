@@ -1,22 +1,32 @@
-﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+﻿@if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-    @Html.AntiForgeryToken()
-
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
-    }
+    <text>
+        <ul class="login-search-menu fr clearfix">
+            <li class="fl">
+                Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                }
+            </li>
+        </ul> </text>
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <ul class="login-search-menu fr clearfix">
+        <li class="fl">
+            @Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "sign-up medium" })
+        </li>
+        <li class="fl last">
+            @Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "login medium" })
+        </li>
+        <!--<li class="fl search">
+            <form accept-charset="UTF-8" action="http://www.indiegogo.com/projects" method="get"><div style="margin: 0; padding: 0; display: inline"><input name="utf8" type="hidden" value="✓"></div>
+                <input id="form_search_input" maxlength="300" name="filter_text" placeholder="search keywords" type="text">
+                <input class="ir" id="form_search_submit" name="search_submit" type="submit" value="Search">
+            </form>          </li>-->
     </ul>
+
+
 }

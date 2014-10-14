@@ -1,0 +1,40 @@
+.dark-shadow {
+    -moz-box-shadow: 1px 1px 2px black;
+    -webkit-box-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 2px black;
+}
+
+#info_bar {
+  background-color: #777777;
+  color:#FFFFFF;
+  z-index: 1000;
+  width: 100%;
+  min-height: 30px;
+  font-size:12px;
+}
+
+#info_bar .container {
+  line-height: 38px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  width: 940px;
+}
+
+#info_bar a, #info_bar a:hover, #info_bar a:active {
+  color:#FFFFFF;
+  cursor:pointer;
+}
+
+#info_bar a:hover {
+  text-decoration: underline;
+}
+
+#red_cross_dismiss, #red_cross_dismiss:hover, #red_cross_dismiss:active {
+  text-decoration:none;
+  font-size:16px;
+}
+
+#red_cross_content {
+  width: 940px;
+}

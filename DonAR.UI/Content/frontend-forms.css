@@ -1,0 +1,50 @@
+/* from frontend-forms =========================== */
+
+
+label {
+  display: block;
+  margin-bottom: 2px;
+  color: #363636;
+}
+
+input.rounded {
+  border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px;
+}
+
+.input-item-text input,
+.input-item-select select,
+.input-item-radio-group,
+.input-item-submit {
+  margin-bottom: 12px;
+}
+
+.input-item-text input {
+  width: 180px;
+  padding: 5px;
+  border: 1px solid #aeaeae;
+  background: #efeeee;
+  background: -moz-linear-gradient(top,  #efeeee 0%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efeeee), color-stop(100%,#ffffff));
+  background: -webkit-linear-gradient(top,  #efeeee 0%,#ffffff 100%);
+  background: -o-linear-gradient(top,  #efeeee 0%,#ffffff 100%);
+  background: -ms-linear-gradient(top,  #efeeee 0%,#ffffff 100%);
+  background: linear-gradient(top,  #efeeee 0%,#ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efeeee', endColorstr='#ffffff',GradientType=0 );
+}
+
+.input-item-select select {
+  width: 191px;
+  font-size: 11px;
+  padding: 2px;
+}
+
+.radio-option input {
+  margin-right: 2px;
+}
+
+.radio-option label {
+  margin-right: 15px;
+  font-size: 11px;
+}

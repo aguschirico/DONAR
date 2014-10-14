@@ -113,7 +113,9 @@ namespace DonAR.Core.Data
             });
 
             #endregion
-            
+
+            context.SaveChanges();
+
             #region Users
 
             context.Users.Add(new User
@@ -136,12 +138,12 @@ namespace DonAR.Core.Data
             
             #region Donations
 
-            context.Donations.Add(new Donation { Id = 1, Geography = context.Geographies.Where(x => x.Id == 1).FirstOrDefault() });
-            context.Donations.Add(new Donation { Id = 2, Geography = context.Geographies.Where(x => x.Id == 2).FirstOrDefault() });
-            context.Donations.Add(new Donation { Id = 3, Geography = context.Geographies.Where(x => x.Id == 3).FirstOrDefault() });
+            context.Donations.Add(new Donation { Id = 1, TimeStamp= new DateTime(2014, 01, 05), Geography = context.Geographies.Where(x => x.Id == 1).FirstOrDefault() });
+            context.Donations.Add(new Donation { Id = 2, TimeStamp = new DateTime(2014, 01, 05), Geography = context.Geographies.Where(x => x.Id == 2).FirstOrDefault() });
+            context.Donations.Add(new Donation { Id = 3, TimeStamp = new DateTime(2014, 01, 05), Geography = context.Geographies.Where(x => x.Id == 3).FirstOrDefault() });
 
             #endregion
-         
+
             #region Confirmations
 
             context.DonationConfirmations.Add(new DonationConfirmation
@@ -170,7 +172,9 @@ namespace DonAR.Core.Data
             });
 
             #endregion
-            
+
+            context.SaveChanges();
+
             #region Donors
 
             context.Donors.Add(new Donor
