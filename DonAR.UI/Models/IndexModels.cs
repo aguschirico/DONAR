@@ -1,6 +1,7 @@
 ﻿using DonAR.Core.Data;
 using DonAR.Core.Entities;
 using DonAR.Core.Repositories;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,14 @@ namespace DonAR.UI.Models
 {
     public class IndexModels
     {
-        public IndexModels(int categoryId)
+        public IndexModels(int categoryId, int? pageNumber, int? pageSize)
         {
-            CreateModel(categoryId);
+            CreateModel(pageNumber ?? 1, pageSize?? 2, categoryId);
+        }
+
+        public IndexModels(int pageNumber, int pageSize)
+        {
+            CreateModel(pageNumber, pageSize, null);
         }
 
         public override bool Equals(object obj)
@@ -21,7 +27,7 @@ namespace DonAR.UI.Models
             return base.Equals(obj);
         }
 
-        private void CreateModel(int? categoryId = null)
+        private void CreateModel(int pageNumber, int pageSize, int? categoryId = null)
         {
             var context = new DonarContext();
             var repo = new GenericRepository<Category>(context);
@@ -42,7 +48,8 @@ namespace DonAR.UI.Models
                                 ? repoCampaigns.GetAll()
                                       .Where(c => c.Category.Id == categoryId.Value)
                                 : repoCampaigns.GetAll();
-            
+
+
             Campaigns = campaigns
                 .Select(i => new CampaignModels
                 {
@@ -54,17 +61,18 @@ namespace DonAR.UI.Models
                     StartDate = i.Target.StartDate,
                     Funded = i.Target.Funded,
                     ImageName = i.DescriptionBody
-                }).ToList();
+                }).AsQueryable().OrderBy(x => x.CategoryName).ToPagedList<CampaignModels>(pageNumber, pageSize);
+
         }
 
 
         public IndexModels()
         {
-            CreateModel();
+            CreateModel(1, 1, null);
         }
 
         public string CategoryName { get; set; }
         public IEnumerable<CategoryModels> Categories { get; set; }
-        public IEnumerable<CampaignModels> Campaigns { get; set; }
+        public IPagedList<CampaignModels> Campaigns { get; set; }
     }
 }

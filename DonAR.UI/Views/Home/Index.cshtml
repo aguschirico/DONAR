@@ -1,7 +1,10 @@
 ﻿@model DonAR.UI.Models.IndexModels
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Don-Ar";
 }
+<link href="~/Content/PagedList.css" rel="stylesheet" />
 
 <div class="sub-header">
     <div class="container clearfix">
@@ -52,9 +55,24 @@
                     </li>
                 }
             </ul>
-            <nav class="pager">
-                <div class="browse_pagination"><span class="previous_page disabled">Ant</span> <em class="current">1</em> <a rel="next" href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=2">2</a> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=3">3</a> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=4">4</a> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=5">5</a> <span class="gap">…</span> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=8">8</a> <a class="next_page" rel="next" href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=2">Sig</a></div>
-            </nav>
+            <div>
+                @Html.PagedListPager(Model.Campaigns, page => Url.Action("Index", new { page = page }))
+            </div>
+            @*<nav class="pager">
+                
+            </nav>*@
+            @*<nav class="pager">
+                <div class="browse_pagination">
+                    <span class="previous_page disabled">Ant</span> <em class="current">1</em> 
+                    <a rel="next" href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=2">2</a> 
+                    <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=3">3</a> 
+                    <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=4">4</a> 
+                    <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=5">5</a> 
+                    <span class="gap">…</span> <a href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=8">8</a> 
+                    <a class="next_page" rel="next" href="http://www.indiegogo.com/projects?pbigg_id=1&pg_num=2">Sig</a>
+                </div>
+            </nav>*@
+
         </section>
         <aside class="fl category-menu">
             <nav>

@@ -10,19 +10,20 @@ namespace DonAR.UI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            int pageSize = 2;
+            int pageNumber = page ?? 1; 
+            var model = new IndexModels(pageNumber, pageSize);
 
-            //InitRepo.Setup();
-
-
-            return View(new IndexModels());
+            return View(model);
         }
 
         public ActionResult ByCategory(int categoryId)
         {
-            return View("Index", new IndexModels(categoryId));
+            return View("Index", new IndexModels(categoryId, null, null));
         }
 
         public ActionResult About()
@@ -39,31 +40,4 @@ namespace DonAR.UI.Controllers
             return View();
         }
     }
-    //public class InitRepo
-    //{
-    //    public static void Setup()
-    //    {
-    //        var x = GlobalRepo.CurrentRepo();
-
-    //        for (var i = 0; i < 20; i++)
-    //        {
-    //            x.Persist(new Category
-    //            {
-    //                Name = string.Format("Category Name {0}", i),
-    //                Description = string.Format("Category Description {0}", i)
-    //            });
-    //        }
-
-    //        for (var i = 0; i < 20; i++)
-    //        {
-    //            x.Persist(new Campaign
-    //            {
-    //                Title = string.Format("Título de Campaña {0}", i),
-    //                Description = string.Format("Descripción de la campaña {0}", i),
-    //                Category = GlobalRepo.CurrentRepo().GetAll<Category>().First(),
-    //            });
-    //        }
-
-    //    }
-    //}
 }
