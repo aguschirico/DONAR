@@ -336,10 +336,10 @@ namespace DonAR.Core.Data
                 Active = true,
                 CampaignType = context.CampaignTypes.Where(x => x.Id == 4).FirstOrDefault(),
                 Category = context.Categories.Where(x => x.Id == 4).FirstOrDefault(),
-                Title = "Merendero San Pedro",
-                Description = @"Somos un grupo de familiares y amigos unidos sin fines de lucro buscando ayudar al 
-                                                        merendero de nuestro barrio con ropa, colchones y cualquier otro material que no uses",
-                DescriptionBody = "hogar.jpg",
+                Title = "Restaurar el monumento a la bandera",
+                Description = @"La Escuela N°26 de la localidad busca fondos para restaurar el monumento a la bandera situado en la plaza
+                                        España, a unas cuadras de la escuela",
+                DescriptionBody = "escuela.jpg",
                 EmbededVideo = string.Empty,
                 Geography = context.Geographies.Where(x => x.Id == 4).FirstOrDefault(),
                 Target = context.Targets.Where(x => x.Id == 4).FirstOrDefault(),
