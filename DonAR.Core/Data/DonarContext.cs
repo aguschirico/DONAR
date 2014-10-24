@@ -351,10 +351,10 @@ namespace DonAR.Core.Data
                 Id = 5,
                 Active = true,
                 CampaignType = context.CampaignTypes.Where(x => x.Id == 5).FirstOrDefault(),
-                Category = context.Categories.Where(x => x.Id == 5).FirstOrDefault(),
-                Title = "Merendero San Pedro",
-                Description = @"Somos un grupo de familiares y amigos unidos sin fines de lucro buscando ayudar al 
-                                                        merendero de nuestro barrio con ropa, colchones y cualquier otro material que no uses",
+                Category = context.Categories.Where(x => x.Id == 3).FirstOrDefault(),
+                Title = "Hogar de las Madres",
+                Description = @"Hogar situado en el corazón de la villa 1-11-14, que brinda alimentación, contención y asistencia a chicos 
+                                                        de entre 2 y 11 años que residen en la villa.",
                 DescriptionBody = "hogar.jpg",
                 EmbededVideo = string.Empty,
                 Geography = context.Geographies.Where(x => x.Id == 5).FirstOrDefault(),
